@@ -14,6 +14,7 @@ const useFirebase = () => {
     const [user, setUser] = useState({});
     const [isLoading, setIsLoading] = useState(true);
     const [authError, setAuthError] = useState('');
+    const [isAdmin, setIsAdmin] = useState(false);
 
     /* ================================
     Register User 
@@ -123,6 +124,18 @@ const useFirebase = () => {
             .then()
     }
 
+    // Check Admin
+    useEffect(() => {
+        fetch(`http://localhost:5000/checkAdmin/${user?.email}`)
+            .then((res) => res.json())
+            .then((data) => {
+                if (data[0]?.role === "admin") {
+                    setIsAdmin(true);
+                } else {
+                    setIsAdmin(false);
+                }
+            });
+    }, [user?.email]);
 
 
 
@@ -131,6 +144,7 @@ const useFirebase = () => {
         user,
         isLoading,
         authError,
+        isAdmin,
         registerUser,
         loginUser,
         signInWithGoogle,

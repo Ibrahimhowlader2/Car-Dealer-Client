@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Route, Switch, useRouteMatch } from 'react-router';
 import { Link } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
@@ -10,28 +10,14 @@ import ManageProducts from '../ManageProducts/ManageProducts';
 import MyOrders from '../MyOrders/MyOrders';
 import './DashboardHome.css';
 import logo from '../../../images/carDealerLogo.png';
+import AdminRoute from '../../Login/AdminRoute/AdminRoute';
 
 const DashboardHome = () => {
 
-    const { user, logOut } = useAuth();
+    const { user, isAdmin, logOut } = useAuth();
 
     let { path, url } = useRouteMatch();
     const [isOpen, setIsOpen] = useState(true);
-
-    const [isAdmin, setIsAdmin] = useState(false);
-
-    useEffect(() => {
-        fetch(`http://localhost:5000/checkAdmin/${user?.email}`)
-            .then((res) => res.json())
-            .then((data) => {
-                if (data[0]?.role === "admin") {
-                    setIsAdmin(true);
-                } else {
-                    setIsAdmin(false);
-                }
-            });
-    }, [user?.email]);
-
 
     return (
         <div className="d-flex" id="wrapper">
@@ -46,24 +32,27 @@ const DashboardHome = () => {
                         <Link to={`${url}`} className="list-group-item list-group-item-action bg-transparent second-text active">
                             <i className="fas fa-tachometer-alt me-2"></i> Dashboard
                         </Link>
+                        <Link to="/products" className="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+                            <i class="fas fa-shopping-basket me-2"></i> Shopping Now
+                        </Link>
                         <Link to={`${url}/addReview`} className="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-                            <i className="fas fa-project-diagram me-2"></i> Add Review
+                            <i class="fas fa-comments me-2"></i> Add Review
                         </Link>
                         {isAdmin &&
                             <Link to={`${url}/addProduct`} className="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-                                <i className="fas fa-project-diagram me-2"></i> Add Product
+                                <i class="fab fa-product-hunt me-2"></i> Add Product
                             </Link>}
                         {isAdmin &&
                             <Link to={`${url}/makeAdmin`} className="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-                                <i className="fas fa-project-diagram me-2"></i> Make Admin
+                                <i class="fas fa-user-tie me-2"></i> Make Admin
                             </Link>}
                         {isAdmin &&
                             <Link to={`${url}/manageOrders`} className="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-                                <i className="fas fa-project-diagram me-2"></i> Manage Orders
+                                <i class="far fa-list-alt me-2"></i> Manage Orders
                             </Link>}
                         {isAdmin &&
                             <Link to={`${url}/manageProducts`} className="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-                                <i className="fas fa-project-diagram me-2"></i> Manage Products
+                                <i class="fas fa-gift me-2"></i> Manage Products
                             </Link>}
 
                         <Link to="/login" onClick={logOut} className="list-group-item list-group-item-action bg-transparent text-danger fw-bold">
@@ -85,20 +74,22 @@ const DashboardHome = () => {
                         <span className="navbar-toggler-icon"></span>
                     </button>
 
-                    <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-                            <li className="nav-item dropdown">
-                                <a className="nav-link dropdown-toggle second-text fw-bold" href="/" id="navbarDropdown"
-                                    role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <i className="fas fa-user me-2"></i>{user.displayName}
-                                </a>
-                                <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a className="dropdown-item" href="/">Home</a></li>
-                                    <li><a className="dropdown-item" href="/products">Products</a></li>
-                                    <li><Link onClick={logOut} className="dropdown-item" to="/login">Logout</Link></li>
-                                </ul>
-                            </li>
-                        </ul>
+                    <div className="container">
+                        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+                                <li className="nav-item dropdown">
+                                    <a className="nav-link dropdown-toggle second-text fw-bold" href="/" id="navbarDropdown"
+                                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i className="fas fa-user me-2"></i>{user.displayName}
+                                    </a>
+                                    <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <li><a className="dropdown-item" href="/">Home</a></li>
+                                        <li><a className="dropdown-item" href="/products">Products</a></li>
+                                        <li><Link onClick={logOut} className="dropdown-item" to="/login">Logout</Link></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </nav>
 
@@ -114,18 +105,18 @@ const DashboardHome = () => {
                             <Route exact path={`${path}/addReview`}>
                                 <AddReviews />
                             </Route>
-                            <Route exact path={`${path}/addProduct`}>
+                            <AdminRoute exact path={`${path}/addProduct`}>
                                 <AddProducts />
-                            </Route>
-                            <Route exact path={`${path}/makeAdmin`}>
+                            </AdminRoute>
+                            <AdminRoute exact path={`${path}/makeAdmin`}>
                                 <MakeAdmin />
-                            </Route>
-                            <Route exact path={`${path}/manageOrders`}>
+                            </AdminRoute>
+                            <AdminRoute exact path={`${path}/manageOrders`}>
                                 <ManageOrders />
-                            </Route>
-                            <Route path={`${path}/manageProducts`}>
-                                <ManageProducts/>
-                            </Route>
+                            </AdminRoute>
+                            <AdminRoute path={`${path}/manageProducts`}>
+                                <ManageProducts />
+                            </AdminRoute>
                         </Switch>
                     </div>
 
