@@ -1,6 +1,6 @@
 .add_content_heading {
     text-align: center;
-    border-bottom: .2rem solid var(--main-bg-color);
+    border-bottom: .1rem solid var(--main-bg-color);
     padding: 5rem;
 }
 

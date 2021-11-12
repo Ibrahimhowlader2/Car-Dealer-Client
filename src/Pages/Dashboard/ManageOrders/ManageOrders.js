@@ -72,7 +72,9 @@ const ManageOrders = () => {
                     </thead>
                     {
                         orders?.map((pd, index) => (
-                            <tbody>
+                            <tbody
+                            key={pd._id}
+                            >
                                 <tr>
                                     <td data-label="S.No">{index}</td>
                                     <td data-label="Products">Products</td>

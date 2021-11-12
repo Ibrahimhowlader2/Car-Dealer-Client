@@ -21,7 +21,7 @@ const OurProducts = () => {
             <h1 className="title"> Our <span >products</span> <Link to="/products">view all &#62;&#62;</Link> </h1>
             <div className="featured-container">
                 {
-                    ourProducts.slice(0,6).map((ourProduct, index) => (
+                    ourProducts.slice(0, 6).map((ourProduct, index) => (
                         <div
                             className="box"
                             key={ourProduct._id}
@@ -29,7 +29,7 @@ const OurProducts = () => {
                             <img src={ourProduct.services_photo} alt="" />
                             <div className="content">
                                 <h3>{ourProduct.title}</h3>
-                                <p>{ourProduct.description}</p>
+                                <p>{ourProduct.description.slice(0, 200)}</p>
                                 <div className="stars">
                                     <i className="fas fa-star"></i>
                                     <i className="fas fa-star"></i>
@@ -38,7 +38,10 @@ const OurProducts = () => {
                                     <i className="fas fa-star-half-alt"></i>
                                 </div>
                                 <div className="price">$ {ourProduct.price} /-</div>
-                                <Link to={`/productsDetails/${ourProduct._id}`} className="btn">check out</Link>
+                                <Link
+                                    to={`/productsDetails/${ourProduct._id}`} 
+                                    className="btn">check out
+                                </Link>
                                 {/* <div className="d-flex justify-content-between">
                             <a href="/" className="btn">check out</a>
                             <a href="/" className="btn">check out</a>

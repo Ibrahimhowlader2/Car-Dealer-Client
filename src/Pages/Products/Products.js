@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../Shared/Header/Header';
+import './Products.css';
 
 
 const Products = () => {
@@ -24,8 +25,8 @@ const Products = () => {
                 <h1>Products</h1>
                 <p> <a href="/">home</a> &#62;&#62; Products </p>
             </section>
-            <section className="featured" id="featured">
-                <div className="featured-container">
+            <section className="featured products" id="featured">
+                <div className="featured-container products_container">
                 {
                     products.map((product, index) => (
                         <div
@@ -35,7 +36,7 @@ const Products = () => {
                             <img src={product.services_photo} alt="" />
                             <div className="content">
                                 <h3>{product.title}</h3>
-                                <p>{product.description}</p>
+                                <p>{product.description.slice(0,120)}</p>
                                 <div className="stars">
                                     <i className="fas fa-star"></i>
                                     <i className="fas fa-star"></i>

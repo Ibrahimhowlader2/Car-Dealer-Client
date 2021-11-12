@@ -16,7 +16,7 @@
 }
 
 .table th{
-	background-color: var(--black);
+	background-color: var(--main-bg-color);
 	color:#ffffff;
 }
 

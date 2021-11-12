@@ -6,8 +6,10 @@ import AddProducts from '../AddProducts/AddProducts';
 import AddReviews from '../AddReviews/AddReviews';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import ManageOrders from '../ManageOrders/ManageOrders';
+import ManageProducts from '../ManageProducts/ManageProducts';
 import MyOrders from '../MyOrders/MyOrders';
 import './DashboardHome.css';
+import logo from '../../../images/carDealerLogo.png';
 
 const DashboardHome = () => {
 
@@ -36,7 +38,9 @@ const DashboardHome = () => {
             {isOpen &&
                 <div className="bg-white" id="sidebar-wrapper">
                     <div className="sidebar-heading text-center py-4 primary-text fw-bold text-uppercase border-bottom">
-                        <i className="fas fa-user-secret me-2"></i> Codersbite
+                        <Link to="/" className="logo">
+                            <img src={logo} alt="" />
+                        </Link>
                     </div>
                     <div className="list-group list-group-flush my-3">
                         <Link to={`${url}`} className="list-group-item list-group-item-action bg-transparent second-text active">
@@ -56,6 +60,10 @@ const DashboardHome = () => {
                         {isAdmin &&
                             <Link to={`${url}/manageOrders`} className="list-group-item list-group-item-action bg-transparent second-text fw-bold">
                                 <i className="fas fa-project-diagram me-2"></i> Manage Orders
+                            </Link>}
+                        {isAdmin &&
+                            <Link to={`${url}/manageProducts`} className="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+                                <i className="fas fa-project-diagram me-2"></i> Manage Products
                             </Link>}
 
                         <Link to="/login" onClick={logOut} className="list-group-item list-group-item-action bg-transparent text-danger fw-bold">
@@ -115,8 +123,8 @@ const DashboardHome = () => {
                             <Route exact path={`${path}/manageOrders`}>
                                 <ManageOrders />
                             </Route>
-                            <Route path={`${path}/manageServices`}>
-
+                            <Route path={`${path}/manageProducts`}>
+                                <ManageProducts/>
                             </Route>
                         </Switch>
                     </div>
