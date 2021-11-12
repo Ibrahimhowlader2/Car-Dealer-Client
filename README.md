@@ -1,4 +1,6 @@
 # Car Dealer Website
+## Project Description :
+This website has a sleek design. It starts off with its simple but stylish landing page in a color scheme that radiates timelessness and sophistication. This website also has easy navigation, a great font style, and a clean navigation bar.
 
 ## This is my project link :
 
