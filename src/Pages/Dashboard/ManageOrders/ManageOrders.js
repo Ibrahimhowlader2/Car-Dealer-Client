@@ -31,24 +31,27 @@ const ManageOrders = () => {
         })
             .then((res) => res.json())
             .then((result) => {
-                if(result.acknowledged){
+                if (result.acknowledged) {
                     setControl(!control);
                 }
             });
     };
 
     const handleDelete = (id) => {
-        fetch(`http://localhost:5000/deleteOrder/${id}`, {
-            method: "DELETE",
-        })
-            .then((res) => res.json())
-            .then((data) => {
-                if (data.deletedCount) {
-                    setControl(!control);
-                }
-            });
-        console.log(id);
-    };
+        const proceed = window.confirm('Are you sure you want to delete this ?')
+        if (proceed) {
+
+            fetch(`http://localhost:5000/deleteOrder/${id}`, {
+                method: "DELETE",
+            })
+                .then((res) => res.json())
+                .then((data) => {
+                    if (data.deletedCount) {
+                        setControl(!control);
+                    }
+                });
+        };
+    }
 
 
     return (
@@ -74,7 +77,7 @@ const ManageOrders = () => {
                     {
                         orders?.map((pd, index) => (
                             <tbody
-                            key={pd._id}
+                                key={pd._id}
                             >
                                 <tr>
                                     <td data-label="Order No">{index}</td>
@@ -92,21 +95,21 @@ const ManageOrders = () => {
                                                     defaultValue={pd?.status}>{pd?.status}
                                                 </option>
                                                 <option
-                                                
+
                                                     value="approve">approve
                                                 </option>
                                                 <option
                                                     value="done">Done
                                                 </option>
                                             </select>
-                                            <input  type="submit" />
+                                            <input type="submit" />
                                         </form>
                                     </td>
                                     <td data-label="Status">{pd?.status}</td>
                                     <td className="table_btn" data-label="Delete">
-                                        <button 
-                                        onClick={() => handleDelete(pd?._id)}
-                                        className="btn">Delete</button>
+                                        <button
+                                            onClick={() => handleDelete(pd?._id)}
+                                            className="btn">Delete</button>
                                     </td>
                                 </tr>
 

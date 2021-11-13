@@ -19,15 +19,18 @@ const ManageProducts = () => {
         , [control]);
 
     const handleDelete = (id) => {
-        fetch(`http://localhost:5000/deleteProduct/${id}`, {
-            method: "DELETE",
-        })
-            .then((res) => res.json())
-            .then((data) => {
-                if (data.deletedCount) {
-                    setControl(!control);
-                }
-            });
+        const proceed = window.confirm('Are you sure you want to delete this ?')
+        if (proceed) {
+            fetch(`http://localhost:5000/deleteProduct/${id}`, {
+                method: "DELETE",
+            })
+                .then((res) => res.json())
+                .then((data) => {
+                    if (data.deletedCount) {
+                        setControl(!control);
+                    }
+                });
+        }
     };
 
 
