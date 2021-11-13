@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
 import AuthProvider from './contexts/AuthProvider/AuthProvider';
@@ -6,6 +7,7 @@ import AllReviews from './Pages/AllReviews/AllReviews';
 import ContactUs from './Pages/ContactUs/ContactUs';
 import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
 import Home from './Pages/Home/Home/Home';
+import Loading from './Pages/Loading/Loading';
 import Login from './Pages/Login/Login/Login';
 import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 import Register from './Pages/Login/Register/Register';
@@ -15,9 +17,24 @@ import Products from './Pages/Products/Products';
 import Footer from './Pages/Shared/Footer/Footer';
 
 function App() {
+
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 3000)
+  }, [])
+
+
   return (
-    <div>
-      <AuthProvider>
+    <>
+      {
+        loading ? 
+        <Loading></Loading>  
+        :
+        <AuthProvider>
         <Router>
           <Switch>
             <Route exact path="/">
@@ -51,13 +68,13 @@ function App() {
               <Register />
             </Route>
             <Route path="/*">
-              <PageNotFound/>
+              <PageNotFound />
             </Route>
           </Switch>
           <Footer />
         </Router>
-      </AuthProvider>
-    </div>
+      </AuthProvider>}
+    </>
   );
 }
 
