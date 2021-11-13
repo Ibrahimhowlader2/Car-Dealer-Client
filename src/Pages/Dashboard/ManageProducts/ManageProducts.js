@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import './ManageProducts.css';
+import Rating from 'react-rating';
 
 
 const ManageProducts = () => {
@@ -55,17 +55,18 @@ const ManageProducts = () => {
                                     <div className="d-flex justify-content-between align-items-center">
                                         <div className="price">$ {product.price} /-</div>
                                         <div className="stars">
-                                            <i className="fas fa-star"></i>
-                                            <i className="fas fa-star"></i>
-                                            <i className="fas fa-star"></i>
-                                            <i className="fas fa-star"></i>
-                                            <i className="fas fa-star-half-alt"></i>
+                                            <Rating
+                                                emptySymbol="far fa-star icon-color-size"
+                                                fullSymbol="fas fa-star icon-color-size"
+                                                initialRating={product.Review}
+                                                readonly
+                                            ></Rating>
                                         </div>
                                     </div>
                                     <div className="d-flex justify-content-between">
-                                        <Link to="/">
+                                        
                                             <button className="btn">Update</button>
-                                        </Link>
+                                        
                                         <button
                                             onClick={() => handleDelete(product?._id)}
                                             className="btn">Delete</button>
