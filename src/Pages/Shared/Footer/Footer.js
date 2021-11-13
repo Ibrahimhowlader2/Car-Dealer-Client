@@ -21,8 +21,8 @@ const Footer = () => {
                     <h3>quick links</h3>
                     <Link to="/home" className="links"> <i className="fas fa-arrow-right"></i> Home </Link>
                     <Link to="/about" className="links"> <i className="fas fa-arrow-right"></i> About </Link>
-                    <Link to="/appointment" className="links"> <i className="fas fa-arrow-right"></i> Appointment </Link>
-                    <Link to="/contact" className="links"> <i className="fas fa-arrow-right"></i> Contact </Link>
+                    <Link to="/products" className="links"> <i className="fas fa-arrow-right"></i> Products </Link>
+                    <Link to="/allReviews" className="links"> <i className="fas fa-arrow-right"></i> Reviews </Link>
                 </div>
 
                 <div className="box">

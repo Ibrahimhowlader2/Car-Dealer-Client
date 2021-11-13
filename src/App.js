@@ -15,6 +15,7 @@ import PageNotFound from './Pages/PageNotFound/PageNotFound';
 import ProductDetails from './Pages/ProductDetails/ProductDetails';
 import Products from './Pages/Products/Products';
 import Footer from './Pages/Shared/Footer/Footer';
+import ScrollToTop from './Pages/Shared/ScrollToTop/ScrollToTop';
 
 function App() {
 
@@ -36,6 +37,7 @@ function App() {
         :
         <AuthProvider>
         <Router>
+        <ScrollToTop>
           <Switch>
             <Route exact path="/">
               <Home />
@@ -71,6 +73,7 @@ function App() {
               <PageNotFound />
             </Route>
           </Switch>
+          </ScrollToTop>
           <Footer />
         </Router>
       </AuthProvider>}

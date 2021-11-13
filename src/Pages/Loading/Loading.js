@@ -4,15 +4,15 @@ import './Loading.css';
 const Loading = () => {
     return (
 
-         <div class='loader_container'>
-             <div class='loader'>
-                 <div class='loader--dot'></div>
-                 <div class='loader--dot'></div>
-                 <div class='loader--dot'></div>
-                 <div class='loader--dot'></div>
-                 <div class='loader--dot'></div>
-                 <div class='loader--dot'></div>
-                 <div class='loader--text'></div>
+         <div className='loader_container'>
+             <div className='loader'>
+                 <div className='loader--dot'></div>
+                 <div className='loader--dot'></div>
+                 <div className='loader--dot'></div>
+                 <div className='loader--dot'></div>
+                 <div className='loader--dot'></div>
+                 <div className='loader--dot'></div>
+                 <div className='loader--text'></div>
              </div>
          </div>
 
