@@ -39,9 +39,9 @@ const MyOrders = () => {
                 <table class="table">
                     <thead>
                         <tr>
-                            <th>S.No</th>
-                            <th>Products</th>
-                            <th>Customer</th>
+                            <th>Order No.</th>
+                            <th>Product</th>
+                            <th>Date</th>
                             <th>Price</th>
                             <th>Status</th>
                             <th className="table_btn" >Cancel Order</th>
@@ -54,9 +54,9 @@ const MyOrders = () => {
                             >
                                 <tr>
                                     <td data-label="S.No">{index}</td>
-                                    <td data-label="Products">Products</td>
-                                    <td data-label="Customer">Customer</td>
-                                    <td data-label="Price">1200</td>
+                                    <td data-label="Product">{pd.title}</td>
+                                    <td data-label="Price">{pd.date}</td>
+                                    <td data-label="Price">{pd.price}</td>
                                     <td data-label="Status">{pd?.status}</td>
                                     <td className="table_btn" data-label="Cancel">
                                         <button

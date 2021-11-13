@@ -40,7 +40,7 @@ const OurProducts = () => {
                                 <div className="price">$ {ourProduct.price} /-</div>
                                 <Link
                                     to={`/productsDetails/${ourProduct._id}`} 
-                                    className="btn">check out
+                                    className="btn">Buy Now
                                 </Link>
                                 {/* <div className="d-flex justify-content-between">
                             <a href="/" className="btn">check out</a>

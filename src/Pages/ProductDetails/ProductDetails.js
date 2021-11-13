@@ -24,7 +24,7 @@ const ProductDetails = () => {
     const onSubmit = (data) => {
         const destination = location?.state?.from || '/products';
         history.replace(destination);
-        data.email = user?.email;
+        // data.email = user?.email;
         data.status = "pending";
         fetch('http://localhost:5000/addOrders', {
             method: 'POST',
@@ -63,11 +63,11 @@ const ProductDetails = () => {
             <section className="details row">
 
                 <div className="col-md-6">
-                    <div className="image content">
+                    <div className="content">
                         <img src={details.services_photo} alt="" />
                         <h3>{details.title}</h3>
                         <p> {details.description} </p>
-                        <p><strong className="days">{details.days}</strong> <strong className="price">$ {details.price}</strong></p>
+                        <p><strong className="days">{details.days}</strong> <strong className="price">Price : $ {details.price}</strong></p>
                         {/* <Link to="/"> Order </Link> */}
                     </div>
                 </div>
@@ -75,45 +75,50 @@ const ProductDetails = () => {
                     <div className="order_form">
                         <form onSubmit={handleSubmit(onSubmit)}>
                             <input
-                                {...register("title")}
-                                placeholder="Title"
+                                {...register("date", { required: true })}
+                                placeholder="Date"
+                                defaultValue={new Date().toDateString()}
+                                className="input-fill"
+                            />
+                            <br />
+                            <input
+                                {...register("title", { required: true })}
+                                placeholder="Product Name"
                                 defaultValue={details.title}
-                                className="input-fill"
-                            />
-                            <br />
-
-                            {/* <input
-                        {...register("email", { required: true })}
-                        placeholder="Email"
-                        className="input-fill"
-                    />
-                    <br /> */}
-                            <textarea
-                                {...register("description", { required: true })}
-                                placeholder="Description"
-                                defaultValue={details.description}
-                                className="input-fill"
-                            />
-                            <br />
-                            <input
-                                {...register("services_photo", { required: true })}
-                                placeholder="Photo Url"
-                                defaultValue={details.services_photo}
-                                className="input-fill"
-                            />
-                            <br />
-                            <input
-                                {...register("Review", { required: true })}
-                                placeholder="Review"
-                                defaultValue={details.Review}
                                 className="input-fill"
                             />
                             <br />
                             <input
                                 {...register("price", { required: true })}
-                                placeholder="$ cost"
+                                placeholder="price"
                                 defaultValue={details.price}
+                                className="input-fill"
+                            />
+                            <br />
+                            <input
+                                {...register("name")}
+                                placeholder="User Name"
+                                defaultValue={user.displayName}
+                                className="input-fill"
+                            />
+                            <br />
+                            <input
+                                {...register("email")}
+                                placeholder="email"
+                                defaultValue={user.email}
+                                className="input-fill"
+                            />
+                            <br />
+                            <input
+                                {...register("phone", { required: true })}
+                                placeholder="Phone"
                                 type="number"
+                                className="input-fill"
+                            />
+                            <br />
+                            <input
+                                {...register("address", { required: true })}
+                                placeholder="Address"
                                 className="input-fill"
                             />
                             <br />

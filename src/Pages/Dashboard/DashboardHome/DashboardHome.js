@@ -11,6 +11,7 @@ import MyOrders from '../MyOrders/MyOrders';
 import './DashboardHome.css';
 import logo from '../../../images/carDealerLogo.png';
 import AdminRoute from '../../Login/AdminRoute/AdminRoute';
+import Payment from '../Payment/Payment';
 
 const DashboardHome = () => {
 
@@ -30,13 +31,16 @@ const DashboardHome = () => {
                     </div>
                     <div className="list-group list-group-flush my-3">
                         <Link to={`${url}`} className="list-group-item list-group-item-action bg-transparent second-text active">
-                            <i className="fas fa-tachometer-alt me-2"></i> Dashboard
+                        <i class="fas fa-clipboard-list me-2"></i> My Order
                         </Link>
                         <Link to="/products" className="list-group-item list-group-item-action bg-transparent second-text fw-bold">
                             <i class="fas fa-shopping-basket me-2"></i> Shopping Now
                         </Link>
                         <Link to={`${url}/addReview`} className="list-group-item list-group-item-action bg-transparent second-text fw-bold">
                             <i class="fas fa-comments me-2"></i> Add Review
+                        </Link>
+                        <Link to={`${url}/payment`} className="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+                        <i class="fas fa-money-check-alt me-2"></i> Payment
                         </Link>
                         {isAdmin &&
                             <Link to={`${url}/addProduct`} className="list-group-item list-group-item-action bg-transparent second-text fw-bold">
@@ -104,6 +108,9 @@ const DashboardHome = () => {
                             </Route>
                             <Route exact path={`${path}/addReview`}>
                                 <AddReviews />
+                            </Route>
+                            <Route exact path={`${path}/payment`}>
+                                <Payment/>
                             </Route>
                             <AdminRoute exact path={`${path}/addProduct`}>
                                 <AddProducts />

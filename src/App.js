@@ -9,6 +9,7 @@ import Home from './Pages/Home/Home/Home';
 import Login from './Pages/Login/Login/Login';
 import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 import Register from './Pages/Login/Register/Register';
+import PageNotFound from './Pages/PageNotFound/PageNotFound';
 import ProductDetails from './Pages/ProductDetails/ProductDetails';
 import Products from './Pages/Products/Products';
 import Footer from './Pages/Shared/Footer/Footer';
@@ -25,9 +26,9 @@ function App() {
             <Route exact path="/home">
               <Home />
             </Route>
-            <PrivateRoute path="/products">
+            <Route path="/products">
               <Products />
-            </PrivateRoute>
+            </Route>
             <PrivateRoute path="/productsDetails/:productId">
               <ProductDetails />
             </PrivateRoute>
@@ -48,6 +49,9 @@ function App() {
             </Route>
             <Route path="/register">
               <Register />
+            </Route>
+            <Route path="/*">
+              <PageNotFound/>
             </Route>
           </Switch>
           <Footer />

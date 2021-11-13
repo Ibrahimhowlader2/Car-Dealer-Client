@@ -52,7 +52,7 @@ const AddReviews = () => {
                     <br />
 
                     <input
-                        {...register("services_photo", { required: true })}
+                        {...register("services_photo")}
                         placeholder="Photo Url"
                         defaultValue={user?.photoURL}
                         className="input-fill"

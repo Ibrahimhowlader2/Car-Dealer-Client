@@ -1,18 +1,6 @@
 
 
-.details .image {
-    -webkit-box-flex: 1;
-    -ms-flex: 1 1 40rem;
-    flex: 1 1 40rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
 
-.details .image img {
-    width: 80%;
-}
 
 .details .content {
     -webkit-box-flex: 1;
@@ -29,6 +17,7 @@
     color: var(--black);
     font-size: 3rem;
     padding-top: .5rem;
+    font-weight: bold;
 }
 
 .details .content p {

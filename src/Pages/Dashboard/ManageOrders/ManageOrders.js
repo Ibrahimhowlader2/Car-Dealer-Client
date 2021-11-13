@@ -61,8 +61,9 @@ const ManageOrders = () => {
                 <table class="table">
                     <thead>
                         <tr>
-                            <th>S.No</th>
-                            <th>Products</th>
+                            <th>Order No.</th>
+                            <th>Date</th>
+                            <th>Product</th>
                             <th>Customer</th>
                             <th>Price</th>
                             <th>Status Update</th>
@@ -76,10 +77,11 @@ const ManageOrders = () => {
                             key={pd._id}
                             >
                                 <tr>
-                                    <td data-label="S.No">{index}</td>
-                                    <td data-label="Products">Products</td>
-                                    <td data-label="Customer">Customer</td>
-                                    <td data-label="Price">1200</td>
+                                    <td data-label="Order No">{index}</td>
+                                    <td data-label="Date">{pd.date}</td>
+                                    <td data-label="Products">{pd.title}</td>
+                                    <td data-label="Customer">{pd.name}</td>
+                                    <td data-label="Price">{pd.price}</td>
                                     <td data-label="Status-Update">
                                         <form className="manage_form" onSubmit={handleSubmit(onSubmit)}>
                                             <select

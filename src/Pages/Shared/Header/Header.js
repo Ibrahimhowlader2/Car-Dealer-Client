@@ -28,14 +28,14 @@ const Header = () => {
                                 <a class="nav-link" href="/products">Products</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/allReviews">Our Reviews</a>
+                                <a class="nav-link" href="/allReviews">Reviews</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="/about">About</a>
                             </li>
-                            <li class="nav-item">
+                            {/* <li class="nav-item">
                                 <a class="nav-link" href="/contact">Contact</a>
-                            </li>
+                            </li> */}
                         </ul>
                         <div class="d-flex">
 
@@ -47,7 +47,7 @@ const Header = () => {
                                         <button onClick={logOut} className="tb_btn"> Log Out </button>
                                         </>
 
-                                        <Link to="/dashboard"><button className="tb_btn ms-3"> <i class="far fa-user"></i> Admin  </button></Link>
+                                        <Link to="/dashboard"><button className="tb_btn ms-3"> <i class="far fa-user"></i> Admin</button></Link>
                                         
                                     </div>
                                     :

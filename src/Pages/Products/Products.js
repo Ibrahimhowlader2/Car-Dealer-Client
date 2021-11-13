@@ -45,7 +45,7 @@ const Products = () => {
                                     <i className="fas fa-star-half-alt"></i>
                                 </div>
                                 <div className="price">$ {product.price} /-</div>
-                                <Link to={`/productsDetails/${product._id}`} className="btn">check out</Link>
+                                <Link to={`/productsDetails/${product._id}`} className="btn">Buy Now</Link>
                                 {/* <div className="d-flex justify-content-between">
                             <a href="/" className="btn">check out</a>
                             <a href="/" className="btn">check out</a>

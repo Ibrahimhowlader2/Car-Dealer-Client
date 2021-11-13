@@ -8,6 +8,7 @@ const ManageProducts = () => {
     const [products, setProducts] = useState([])
     const [control, setControl] = useState(false);
 
+
     useEffect(() =>
         fetch('http://localhost:5000/allProducts')
             .then(res => res.json())
@@ -27,7 +28,6 @@ const ManageProducts = () => {
                     setControl(!control);
                 }
             });
-        console.log(id);
     };
 
 
@@ -64,15 +64,15 @@ const ManageProducts = () => {
                                             <button className="btn">Update</button>
                                         </Link>
                                         <button
-                                        onClick={() => handleDelete(product?._id)}
-                                        className="btn">Delete</button>
+                                            onClick={() => handleDelete(product?._id)}
+                                            className="btn">Delete</button>
+                                    </div>
                                 </div>
                             </div>
-                            </div>
-                ))
+                        ))
                     }
-            </div>
-        </section>
+                </div>
+            </section>
         </>
     );
 };

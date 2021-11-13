@@ -25,7 +25,7 @@ const AboutUs = () => {
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae vel sequi nostrum quae nobis non quaerat nisi voluptatibus recusandae reprehenderit tempore eligendi, eum quibusdam perferendis dicta, incidunt dolores nemo ex.
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae vel sequi nostrum quae nobis non quaerat nisi voluptatibus recusandae reprehenderit tempore eligendi
                     </p>
-                    <Link to="/" ><button className="btn">Book Now</button></Link>
+                    <Link to="/products" ><button className="btn">Buy Now</button></Link>
                 </div>
                 
 
