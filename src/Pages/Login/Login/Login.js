@@ -32,17 +32,17 @@ const Login = () => {
     return (
         <>
             <Header />
-            <section class="single_page_heading">
+            <section className="single_page_heading">
                 <h1>account</h1>
                 <p> <Link to="/">home</Link> &#62;&#62; login </p>
             </section>
-            <section class="login-form">
+            <section className="login-form">
 
                 <div className="form_container">
                     <form onSubmit={handleLoginSubmit}>
                         <h3>user login</h3>
-                        <div class="inputBox">
-                            <span class="fas fa-user"></span>
+                        <div className="inputBox">
+                            <span className="fas fa-user"></span>
                             <input
                                 type="email"
                                 name="email"
@@ -51,8 +51,8 @@ const Login = () => {
                                 onBlur={handleOnChange}
                             />
                         </div>
-                        <div class="inputBox">
-                            <span class="fas fa-lock"></span>
+                        <div className="inputBox">
+                            <span className="fas fa-lock"></span>
                             <input
                                 type="password"
                                 name="password"
@@ -61,32 +61,32 @@ const Login = () => {
                                 onBlur={handleOnChange}
                             />
                         </div>
-                        <input type="submit" value="sign in" class="btn" />
-                        <div class="flex">
+                        <input type="submit" value="sign in" className="btn" />
+                        <div className="flex">
                             <input type="checkbox" name="" id="remember-me" />
                             <label htmlFor="remember-me">remember me</label>
                             <a href="/">forgot password?</a>
                         </div>
-                        <Link to="/register" class="already_acc">create an account</Link>
+                        <Link to="/register" className="already_acc">create an account</Link>
                         <div className="py-3 fs-4">-----------------Or-----------------</div>
                         
                     </form>
-                    <button onClick={handleGoogleSignIn} class="btn">Sign In With Google</button>
+                    <button onClick={handleGoogleSignIn} className="btn">Sign In With Google</button>
                 </div>
                 {
-                    isLoading && <div class="text-center">
-                        <div class="spinner-border" role="status">
-                            <span class="visually-hidden">Loading...</span>
+                    isLoading && <div className="text-center">
+                        <div className="spinner-border" role="status">
+                            <span className="visually-hidden">Loading...</span>
                         </div>
                     </div>
                 }
                 {
-                    user?.email && <div class="success_error alert alert-success" role="alert">
+                    user?.email && <div className="success_error alert alert-success" role="alert">
                         Login Successfully !
                     </div>
                 }
                 {
-                    authError && <div class="success_error alert alert-danger" role="alert">
+                    authError && <div className="success_error alert alert-danger" role="alert">
                         {authError}
                     </div>
                 }

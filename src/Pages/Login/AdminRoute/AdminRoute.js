@@ -7,9 +7,9 @@ const AdminRoute = ({ children, ...rest }) => {
     const { user, isAdmin } = useAuth();
 
     if (! isAdmin) {
-        return <div class="text-center">
-            <div class="spinner-border" role="status">
-                <span class="visually-hidden">Loading...</span>
+        return <div className="text-center">
+            <div className="spinner-border" role="status">
+                <span className="visually-hidden">Loading...</span>
             </div>
         </div>
     }

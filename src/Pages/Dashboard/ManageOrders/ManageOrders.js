@@ -14,7 +14,7 @@ const ManageOrders = () => {
             .then((res) => res.json())
             .then((data) => setOrders(data));
     }, [control]);
-    console.log(orders);
+ 
 
     // const status = "approved";
     const handleOrderId = (id) => {
@@ -56,12 +56,12 @@ const ManageOrders = () => {
 
     return (
         <>
-            <section class="add_content_heading">
+            <section className="add_content_heading">
                 <h1>Manage Orders</h1>
                 <p> <a href="/"> <span>home</span> </a> <a href="/dashboard">&#62;&#62; <span>Dashboard</span></a> &#62;&#62; Manage Orders </p>
             </section>
             <section>
-                <table class="table">
+                <table className="table">
                     <thead>
                         <tr>
                             <th>Order No.</th>

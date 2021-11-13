@@ -31,32 +31,32 @@ const DashboardHome = () => {
                     </div>
                     <div className="list-group list-group-flush my-3">
                         <Link to={`${url}`} className="list-group-item list-group-item-action bg-transparent second-text active">
-                        <i class="fas fa-clipboard-list me-2"></i> My Order
+                        <i className="fas fa-clipboard-list me-2"></i> My Order
                         </Link>
                         <Link to="/products" className="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-                            <i class="fas fa-shopping-basket me-2"></i> Shopping Now
+                            <i className="fas fa-shopping-basket me-2"></i> Shopping Now
                         </Link>
                         <Link to={`${url}/addReview`} className="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-                            <i class="fas fa-comments me-2"></i> Add Review
+                            <i className="fas fa-comments me-2"></i> Add Review
                         </Link>
                         <Link to={`${url}/payment`} className="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-                        <i class="fas fa-money-check-alt me-2"></i> Payment
+                        <i className="fas fa-money-check-alt me-2"></i> Payment
                         </Link>
                         {isAdmin &&
                             <Link to={`${url}/addProduct`} className="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-                                <i class="fab fa-product-hunt me-2"></i> Add Product
+                                <i className="fab fa-product-hunt me-2"></i> Add Product
                             </Link>}
                         {isAdmin &&
                             <Link to={`${url}/makeAdmin`} className="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-                                <i class="fas fa-user-tie me-2"></i> Make Admin
+                                <i className="fas fa-user-tie me-2"></i> Make Admin
                             </Link>}
                         {isAdmin &&
                             <Link to={`${url}/manageOrders`} className="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-                                <i class="far fa-list-alt me-2"></i> Manage Orders
+                                <i className="far fa-list-alt me-2"></i> Manage Orders
                             </Link>}
                         {isAdmin &&
                             <Link to={`${url}/manageProducts`} className="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-                                <i class="fas fa-gift me-2"></i> Manage Products
+                                <i className="fas fa-gift me-2"></i> Manage Products
                             </Link>}
 
                         <Link to="/login" onClick={logOut} className="list-group-item list-group-item-action bg-transparent text-danger fw-bold">

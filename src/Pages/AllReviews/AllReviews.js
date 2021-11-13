@@ -17,7 +17,7 @@ const AllReviews = () => {
     return (
         <>
             <Header />
-            <section class="single_page_heading">
+            <section className="single_page_heading">
                 <h1>Client's Reviews</h1>
                 <p> <a href="/">home</a> &#62;&#62; Reviews </p>
             </section>
@@ -31,12 +31,12 @@ const AllReviews = () => {
                                 <img src={review?.services_photo} alt="" />
                                 <h3>{review.client_name}</h3>
                                 <p>{review.comment}</p>
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star-half-alt"></i>
+                                <div className="stars">
+                                    <i className="fas fa-star"></i>
+                                    <i className="fas fa-star"></i>
+                                    <i className="fas fa-star"></i>
+                                    <i className="fas fa-star"></i>
+                                    <i className="fas fa-star-half-alt"></i>
                                 </div>
                             </div>
                         ))

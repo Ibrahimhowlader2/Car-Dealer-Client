@@ -10,7 +10,6 @@ const Reviews = () => {
         fetch('http://localhost:5000/allReviews')
             .then(res => res.json())
             .then(data => {
-                console.log(data);
                 setReviews(data)
             })
         , []);
@@ -31,12 +30,12 @@ const Reviews = () => {
                             }
                             <h3>{review.client_name}</h3>
                             <p>{review.comment}</p>
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
+                            <div className="stars">
+                                <i className="fas fa-star"></i>
+                                <i className="fas fa-star"></i>
+                                <i className="fas fa-star"></i>
+                                <i className="fas fa-star"></i>
+                                <i className="fas fa-star-half-alt"></i>
                             </div>
                         </div>
                     ))

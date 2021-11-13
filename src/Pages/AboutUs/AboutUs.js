@@ -8,7 +8,7 @@ const AboutUs = () => {
     return (
         <>
             <Header/>
-            <section class="single_page_heading">
+            <section className="single_page_heading">
                 <h1>About Us</h1>
                 <p> <a href="/">home</a> &#62;&#62; About Us </p>
             </section>

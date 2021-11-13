@@ -12,7 +12,6 @@ const MyOrders = () => {
             .then((res) => res.json())
             .then((data) => {
                 setMyOrders(data)
-                console.log(data);
             });
     }, [user?.email, control]);
 
@@ -33,12 +32,12 @@ const MyOrders = () => {
 
     return (
         <>
-            <section class="add_content_heading">
+            <section className="add_content_heading">
                 <h1>My Orders {myOrders.length}</h1>
                 <p> <a href="/"> <span>home</span> </a> &#62;&#62; My Orders</p>
             </section>
             <section>
-                <table class="table">
+                <table className="table">
                     <thead>
                         <tr>
                             <th>Order No.</th>

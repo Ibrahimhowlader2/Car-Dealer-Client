@@ -6,7 +6,7 @@ const Payment = () => {
     
     return (
         <>
-            <section class="add_content_heading">
+            <section className="add_content_heading">
                 <h1>Payment Method</h1>
                 <p> <a href="/"> <span>home</span> </a> <a href="/dashboard">&#62;&#62; <span>Dashboard</span></a> &#62;&#62; Payment </p>
             </section>

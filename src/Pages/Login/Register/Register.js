@@ -37,18 +37,18 @@ const Register = () => {
     return (
         <>
             <Header />
-            <section class="single_page_heading">
+            <section className="single_page_heading">
                 <h1>Account</h1>
                 <p> <Link to="/login">Login</Link> &#62;&#62; Register </p>
             </section>
-            <section class="register-form">
+            <section className="register-form">
 
                 {!isLoading &&
                     <div className="form_container">
                         <form onSubmit={handleLoginSubmit}>
                             <h3>register now</h3>
-                            <div class="inputBox">
-                                <span class="fas fa-user"></span>
+                            <div className="inputBox">
+                                <span className="fas fa-user"></span>
                                 <input
                                     type="text"
                                     name="name"
@@ -57,8 +57,8 @@ const Register = () => {
                                     onBlur={handleOnBlur}
                                 />
                             </div>
-                            <div class="inputBox">
-                                <span class="fas fa-envelope"></span>
+                            <div className="inputBox">
+                                <span className="fas fa-envelope"></span>
                                 <input
                                     type="email"
                                     name="email"
@@ -67,8 +67,8 @@ const Register = () => {
                                     onBlur={handleOnBlur}
                                 />
                             </div>
-                            <div class="inputBox">
-                                <span class="fas fa-lock"></span>
+                            <div className="inputBox">
+                                <span className="fas fa-lock"></span>
                                 <input
                                     type="password"
                                     name="password"
@@ -77,8 +77,8 @@ const Register = () => {
                                     onBlur={handleOnBlur}
                                 />
                             </div>
-                            <div class="inputBox">
-                                <span class="fas fa-lock"></span>
+                            <div className="inputBox">
+                                <span className="fas fa-lock"></span>
                                 <input
                                     type="password"
                                     name="password2"
@@ -87,27 +87,27 @@ const Register = () => {
                                     onBlur={handleOnBlur}
                                 />
                             </div>
-                            <input type="submit" value="sign up" class="btn" />
-                            <Link to="/login" class="already_acc">already have an account ?</Link>
+                            <input type="submit" value="sign up" className="btn" />
+                            <Link to="/login" className="already_acc">already have an account ?</Link>
                             <div className="py-3 fs-4">-----------------Or-----------------</div>
                         </form>
-                        <button onClick={handleGoogleSignIn} class="btn">Sign In With Google</button>
+                        <button onClick={handleGoogleSignIn} className="btn">Sign In With Google</button>
                     </div>
                 }
                 {
-                    isLoading && <div class="text-center">
-                        <div class="spinner-border" role="status">
-                            <span class="visually-hidden">Loading...</span>
+                    isLoading && <div className="text-center">
+                        <div className="spinner-border" role="status">
+                            <span className="visually-hidden">Loading...</span>
                         </div>
                     </div>
                 }
                 {
-                    user?.email && <div class="success_error alert alert-success" role="alert">
+                    user?.email && <div className="success_error alert alert-success" role="alert">
                         User Created Success!
                     </div>
                 }
                 {
-                    authError && <div class="success_error alert alert-danger" role="alert">
+                    authError && <div className="success_error alert alert-danger" role="alert">
                         {authError}
                     </div>
                 }
