@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../Shared/Header/Header';
 import './Products.css';
+import Rating from 'react-rating';
 
 
 const Products = () => {
@@ -38,11 +39,12 @@ const Products = () => {
                                 <h3>{product.title}</h3>
                                 <p>{product.description.slice(0,120)}</p>
                                 <div className="stars">
-                                    <i className="fas fa-star"></i>
-                                    <i className="fas fa-star"></i>
-                                    <i className="fas fa-star"></i>
-                                    <i className="fas fa-star"></i>
-                                    <i className="fas fa-star-half-alt"></i>
+                                <Rating
+                                    emptySymbol="far fa-star icon-color-size"
+                                    fullSymbol="fas fa-star icon-color-size"
+                                    initialRating={product.Review}
+                                    readonly
+                                ></Rating>
                                 </div>
                                 <div className="price">$ {product.price} /-</div>
                                 <Link to={`/productsDetails/${product._id}`} className="btn">Buy Now</Link>

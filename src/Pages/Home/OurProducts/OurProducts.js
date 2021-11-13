@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './OurProducts.css';
 import { Link } from 'react-router-dom';
+import Rating from 'react-rating';
 
 const OurProducts = () => {
 
@@ -30,11 +31,12 @@ const OurProducts = () => {
                                 <h3>{ourProduct.title}</h3>
                                 <p>{ourProduct.description.slice(0, 200)}</p>
                                 <div className="stars">
-                                    <i className="fas fa-star"></i>
-                                    <i className="fas fa-star"></i>
-                                    <i className="fas fa-star"></i>
-                                    <i className="fas fa-star"></i>
-                                    <i className="fas fa-star-half-alt"></i>
+                                <Rating
+                                    emptySymbol="far fa-star icon-color-size"
+                                    fullSymbol="fas fa-star icon-color-size"
+                                    initialRating={ourProduct.Review}
+                                    readonly
+                                ></Rating>
                                 </div>
                                 <div className="price">$ {ourProduct.price} /-</div>
                                 <Link

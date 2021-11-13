@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Header from '../Shared/Header/Header';
+import userTb from '../../images/usertb.png';
+import Rating from 'react-rating';
 
 const AllReviews = () => {
     const [reviews, setReviews] = useState([])
@@ -28,15 +30,20 @@ const AllReviews = () => {
                             <div
                                 key={review._id}
                                 className=" box">
-                                <img src={review?.services_photo} alt="" />
+                                {review?.services_photo ?
+                                    <img src={review?.services_photo} alt="" />
+                                    :
+                                    <img src={userTb} alt="" />
+                                }
                                 <h3>{review.client_name}</h3>
                                 <p>{review.comment}</p>
                                 <div className="stars">
-                                    <i className="fas fa-star"></i>
-                                    <i className="fas fa-star"></i>
-                                    <i className="fas fa-star"></i>
-                                    <i className="fas fa-star"></i>
-                                    <i className="fas fa-star-half-alt"></i>
+                                    <Rating
+                                        emptySymbol="far fa-star icon-color-size"
+                                        fullSymbol="fas fa-star icon-color-size"
+                                        initialRating={review.review}
+                                        readonly
+                                    ></Rating>
                                 </div>
                             </div>
                         ))

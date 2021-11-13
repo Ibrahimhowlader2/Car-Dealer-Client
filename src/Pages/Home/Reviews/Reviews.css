@@ -43,7 +43,7 @@
     color: var(--main-bg-color);
 }
 
-.reviews .reviews-container .box .stars i {
-    font-size: 1.7rem;
+.box .stars .icon-color-size {
+    font-size: 2rem;
     color: var(--main-bg-color);
 }
