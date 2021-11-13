@@ -12,7 +12,7 @@ const AddProducts = () => {
 
     const onSubmit = (data) =>{
 
-        fetch('http://localhost:5000/addProducts',{
+        fetch('https://fathomless-temple-79377.herokuapp.com/addProducts',{
             method: 'POST',
             headers: { 
                 'Content-Type': 'application/json'

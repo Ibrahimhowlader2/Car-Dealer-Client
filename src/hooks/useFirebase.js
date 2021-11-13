@@ -114,7 +114,7 @@ const useFirebase = () => {
 
     const saveUser = (email, displayName, method) => {
         const user = { email, displayName };
-        fetch('http://localhost:5000/users', {
+        fetch('https://fathomless-temple-79377.herokuapp.com/users', {
             method: method,
             headers: {
                 'Content-Type': 'application/json'
@@ -126,7 +126,7 @@ const useFirebase = () => {
 
     // Check Admin
     useEffect(() => {
-        fetch(`http://localhost:5000/checkAdmin/${user?.email}`)
+        fetch(`https://fathomless-temple-79377.herokuapp.com/checkAdmin/${user?.email}`)
             .then((res) => res.json())
             .then((data) => {
                 if (data[0]?.role === "admin") {

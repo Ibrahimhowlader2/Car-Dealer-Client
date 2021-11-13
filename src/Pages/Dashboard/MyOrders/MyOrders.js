@@ -8,7 +8,7 @@ const MyOrders = () => {
     const [control, setControl] = useState(false);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myOrders/${user?.email}`)
+        fetch(`https://fathomless-temple-79377.herokuapp.com/myOrders/${user?.email}`)
             .then((res) => res.json())
             .then((data) => {
                 setMyOrders(data)
@@ -18,7 +18,7 @@ const MyOrders = () => {
     const handleDelete = (id) => {
         const proceed = window.confirm('Are you sure you want to delete this ?')
         if (proceed) {
-            fetch(`http://localhost:5000/deleteOrder/${id}`, {
+            fetch(`https://fathomless-temple-79377.herokuapp.com/deleteOrder/${id}`, {
                 method: "DELETE",
             })
                 .then((res) => res.json())

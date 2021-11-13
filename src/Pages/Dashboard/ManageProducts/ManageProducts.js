@@ -10,7 +10,7 @@ const ManageProducts = () => {
 
 
     useEffect(() =>
-        fetch('http://localhost:5000/allProducts')
+        fetch('https://fathomless-temple-79377.herokuapp.com/allProducts')
             .then(res => res.json())
             .then(data => {
                 console.log(data);
@@ -21,7 +21,7 @@ const ManageProducts = () => {
     const handleDelete = (id) => {
         const proceed = window.confirm('Are you sure you want to delete this ?')
         if (proceed) {
-            fetch(`http://localhost:5000/deleteProduct/${id}`, {
+            fetch(`https://fathomless-temple-79377.herokuapp.com/deleteProduct/${id}`, {
                 method: "DELETE",
             })
                 .then((res) => res.json())

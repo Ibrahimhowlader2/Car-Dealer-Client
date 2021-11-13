@@ -17,7 +17,7 @@ const AddReviews = () => {
 
     const onSubmit = (data) => {
 
-        fetch('http://localhost:5000/addReview', {
+        fetch('https://fathomless-temple-79377.herokuapp.com/addReview', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

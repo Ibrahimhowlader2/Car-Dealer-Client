@@ -26,7 +26,7 @@ const ProductDetails = () => {
         history.replace(destination);
         // data.email = user?.email;
         data.status = "pending";
-        fetch('http://localhost:5000/addOrders', {
+        fetch('https://fathomless-temple-79377.herokuapp.com/addOrders', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -47,7 +47,7 @@ const ProductDetails = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/singleProduct/${productId}`)
+        fetch(`https://fathomless-temple-79377.herokuapp.com/singleProduct/${productId}`)
             .then(res => res.json())
             .then(data => setDetails(data))
         // eslint-disable-next-line react-hooks/exhaustive-deps

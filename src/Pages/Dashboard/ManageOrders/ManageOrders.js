@@ -10,7 +10,7 @@ const ManageOrders = () => {
     const [orderId, setOrderId] = useState("");
 
     useEffect(() => {
-        fetch("http://localhost:5000/allOrders")
+        fetch("https://fathomless-temple-79377.herokuapp.com/allOrders")
             .then((res) => res.json())
             .then((data) => setOrders(data));
     }, [control]);
@@ -24,7 +24,7 @@ const ManageOrders = () => {
 
     const onSubmit = (data) => {
         console.log(data, orderId);
-        fetch(`http://localhost:5000/statusUpdate/${orderId}`, {
+        fetch(`https://fathomless-temple-79377.herokuapp.com/statusUpdate/${orderId}`, {
             method: "PUT",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data),
@@ -41,7 +41,7 @@ const ManageOrders = () => {
         const proceed = window.confirm('Are you sure you want to delete this ?')
         if (proceed) {
 
-            fetch(`http://localhost:5000/deleteOrder/${id}`, {
+            fetch(`https://fathomless-temple-79377.herokuapp.com/deleteOrder/${id}`, {
                 method: "DELETE",
             })
                 .then((res) => res.json())
